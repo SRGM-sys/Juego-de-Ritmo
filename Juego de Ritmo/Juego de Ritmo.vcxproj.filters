@@ -13,13 +13,45 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Red">
+      <UniqueIdentifier>{aeec7320-ec95-49c1-8447-222274cc2d81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logica">
+      <UniqueIdentifier>{5e624ef7-de1b-421a-9ce7-b3bc9dc53599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graficos">
+      <UniqueIdentifier>{4d0e24f6-9215-4298-900b-f0b453c57b7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Juego de Ritmo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="GestorRed.cpp">
+      <Filter>Red</Filter>
+    </ClCompile>
+    <ClCompile Include="GestorLogica.cpp">
+      <Filter>Logica</Filter>
+    </ClCompile>
+    <ClCompile Include="GestorGraficos.cpp">
+      <Filter>Graficos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Estructuras.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="GestorRed.h">
+      <Filter>Red</Filter>
+    </ClInclude>
+    <ClInclude Include="GestorLogica.h">
+      <Filter>Logica</Filter>
+    </ClInclude>
+    <ClInclude Include="GestorGraficos.h">
+      <Filter>Graficos</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

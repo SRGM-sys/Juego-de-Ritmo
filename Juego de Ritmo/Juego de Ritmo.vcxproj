@@ -140,10 +140,19 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GestorGraficos.cpp" />
+    <ClCompile Include="GestorLogica.cpp" />
+    <ClCompile Include="GestorRed.cpp" />
     <ClCompile Include="Juego de Ritmo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Estructuras.h" />
+    <ClInclude Include="GestorGraficos.h" />
+    <ClInclude Include="GestorLogica.h" />
+    <ClInclude Include="GestorRed.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
