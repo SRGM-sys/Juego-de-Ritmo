@@ -5,3 +5,5 @@
 void dibujarPuntaje(const EstadoJuego& estado);
 void dibujarJuego(const EstadoJuego& estado);
 
+void dibujarMenuPrincipal(const EstadoJuego& estado);
+void dibujarSeleccionNivel(const EstadoJuego& estado);

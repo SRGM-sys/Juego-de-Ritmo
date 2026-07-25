@@ -11,6 +11,8 @@
 #include "GestorRed.h"
 #include "GestorLogica.h"
 #include "GestorGraficos.h"
+#include "GestorMenu.h"
+#include "GestorAudio.h"
 
 using namespace std;
 
@@ -28,12 +30,44 @@ int main() {
     // 4. Inicializamos el entorno gráfico
     inicializarJuego(estado);
 
+    inicializarAudio(estado);
+    cambiarMusica(estado, CANCION_MENU);
+
     // 5. Bucle Principal
-    while (!WindowShouldClose()) {
-        actualizarJuego(estado, porcentajeX);
-        dibujarJuego(estado);
+    while (!WindowShouldClose() && estado.pantalla != CERRAR_JUEGO) {
+
+        actualizarMusica(estado);
+        verificarFinDeCancion(estado);
+        
+        switch (estado.pantalla) {
+            
+            case MENU_PRINCIPAL:
+                actualizarMenuPrincipal(estado);
+                dibujarMenuPrincipal(estado);
+                break;
+
+            case SELECCION_NIVEL:
+                actualizarSeleccionNivel(estado);
+                dibujarSeleccionNivel(estado);
+                break;
+
+            case JUGANDO:
+                actualizarJuego(estado, porcentajeX);
+                dibujarJuego(estado);
+                break;
+
+            case PERSONALIZACION:
+                // Aun no tenemos nada en personalizacion
+                break;
+
+            case CONFIGURACION:
+                // Aun no tenemos nada en configuracion
+                break;
+        }
+
     }
 
+    cerrarAudio(estado);
     CloseWindow();
     return 0;
 }

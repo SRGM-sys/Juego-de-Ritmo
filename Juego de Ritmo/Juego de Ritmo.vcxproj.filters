@@ -22,6 +22,12 @@
     <Filter Include="Graficos">
       <UniqueIdentifier>{4d0e24f6-9215-4298-900b-f0b453c57b7e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{57b667cc-0a1a-4ba3-a28a-f433ce275c46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sonido">
+      <UniqueIdentifier>{7dd2aeaf-9628-464b-b8b6-de6aae1c268d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Juego de Ritmo.cpp">
@@ -35,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="GestorGraficos.cpp">
       <Filter>Graficos</Filter>
+    </ClCompile>
+    <ClCompile Include="GestorMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="GestorAudio.cpp">
+      <Filter>Sonido</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +64,12 @@
     </ClInclude>
     <ClInclude Include="GestorGraficos.h">
       <Filter>Graficos</Filter>
+    </ClInclude>
+    <ClInclude Include="GestorMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="GestorAudio.h">
+      <Filter>Sonido</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

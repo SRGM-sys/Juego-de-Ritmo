@@ -4,6 +4,23 @@
 #include <vector>
 #include "raylib.h"
 
+// Aquí manejaré los eventos
+enum PantallaActual {
+	MENU_PRINCIPAL,
+	SELECCION_NIVEL,
+	PERSONALIZACION,
+	CONFIGURACION,
+	JUGANDO,
+	CERRAR_JUEGO
+};
+
+enum CancionActual {
+	NINGUNA,
+	CANCION_MENU,
+	CANCION_NIVEL1,
+	CANCION_NIVEL2
+};
+
 struct Particula {
 	float x, y;
 	float vx, vy; // Velocidad en X e Y
@@ -19,9 +36,18 @@ struct EstadoJuego {
 	int buttonHeight = 120, buttonY;
 
 	float noteY = -50.0;
-	float noteSpeed = 6.0;
+	float noteSpeed = 12.0;
 	int noteLane = 1;
 	int noteHeight = 50;
+
+	CancionActual cancionActiva = NINGUNA;
+
+	Music musicaMenu;
+	Music musicaNivel1;
+	Music musicaNivel2;
+
+	Sound sonidoBoton;
+	Sound sonidoColision;
 
 	int porcentajeX = -1;
 	int puntaje = 0;
@@ -38,4 +64,7 @@ struct EstadoJuego {
 
 	// Vector dinámico para guardar las partículas activas
 	std::vector<Particula> particulas;
+
+	PantallaActual pantalla = MENU_PRINCIPAL;
 };
+

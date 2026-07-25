@@ -140,8 +140,10 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GestorAudio.cpp" />
     <ClCompile Include="GestorGraficos.cpp" />
     <ClCompile Include="GestorLogica.cpp" />
+    <ClCompile Include="GestorMenu.cpp" />
     <ClCompile Include="GestorRed.cpp" />
     <ClCompile Include="Juego de Ritmo.cpp" />
   </ItemGroup>
@@ -150,8 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Estructuras.h" />
+    <ClInclude Include="GestorAudio.h" />
     <ClInclude Include="GestorGraficos.h" />
     <ClInclude Include="GestorLogica.h" />
+    <ClInclude Include="GestorMenu.h" />
     <ClInclude Include="GestorRed.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

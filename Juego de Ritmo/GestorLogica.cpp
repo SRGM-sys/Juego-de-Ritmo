@@ -28,6 +28,8 @@ void verificarColisiones(EstadoJuego& estado) {
 
 	if (interseccion.height > 0 && interseccion.width >= (estado.notaActual.width * 0.7f)) {
 		estado.puntaje++;
+		PlaySound(estado.sonidoColision);
+
 
 		// Generamos el efecto de partículas
 		for (int i = 0; i < 15; i++) {
