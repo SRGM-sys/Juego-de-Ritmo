@@ -48,9 +48,9 @@
     <ClCompile Include="GestorAudio.cpp">
       <Filter>Sonido</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ClCompile Include="GestorEditor.cpp">
+      <Filter>Logica</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Estructuras.h">
@@ -71,5 +71,11 @@
     <ClInclude Include="GestorAudio.h">
       <Filter>Sonido</Filter>
     </ClInclude>
+    <ClInclude Include="GestorEditor.h">
+      <Filter>Logica</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

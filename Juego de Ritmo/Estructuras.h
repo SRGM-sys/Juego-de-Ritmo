@@ -11,6 +11,7 @@ enum PantallaActual {
 	PERSONALIZACION,
 	CONFIGURACION,
 	JUGANDO,
+	EDITOR_NIVELES,
 	CERRAR_JUEGO
 };
 
@@ -19,6 +20,12 @@ enum CancionActual {
 	CANCION_MENU,
 	CANCION_NIVEL1,
 	CANCION_NIVEL2
+};
+
+// Esta estructura representa una nota en el archivo de texto (MOTOR)
+struct NotaDatos {
+	float tiempo; //En que momento exacto de la canción aparece
+	int carril;
 };
 
 struct Particula {
@@ -66,5 +73,10 @@ struct EstadoJuego {
 	std::vector<Particula> particulas;
 
 	PantallaActual pantalla = MENU_PRINCIPAL;
+
+	// Variables del editor de niveles
+	std::vector<NotaDatos> notasGuardadas;
+	float tiempoEditor = 0.0f;					// Reloj interno del editor
+	bool reproduciendoEditor = false;			// Saber si la musica esta en play 
 };
 

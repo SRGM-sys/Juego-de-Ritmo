@@ -29,9 +29,16 @@ void actualizarMenuPrincipal(EstadoJuego& estado) {
 		PlaySound(estado.sonidoBoton);
 		estado.pantalla = SELECCION_NIVEL;
 	}
-	if (checkClick(botonCustom))	estado.pantalla = PERSONALIZACION;
-	if (checkClick(botonExit))		estado.pantalla = CERRAR_JUEGO;
-	if (checkClick(botonSettings))	estado.pantalla = CONFIGURACION;
+	if (checkClick(botonCustom)) {
+		estado.pantalla = EDITOR_NIVELES;
+		StopMusicStream(estado.musicaMenu);
+	}
+	if (checkClick(botonExit)) {
+		estado.pantalla = CERRAR_JUEGO;
+	}
+	if (checkClick(botonSettings)) {
+		estado.pantalla = CONFIGURACION;
+	}
 }
 
 void actualizarSeleccionNivel(EstadoJuego& estado) {

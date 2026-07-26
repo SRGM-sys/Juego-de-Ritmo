@@ -83,3 +83,58 @@ void dibujarSeleccionNivel(const EstadoJuego& estado) {
 
     EndDrawing();
 }
+
+void dibujarEditor(const EstadoJuego& estado) {
+    BeginDrawing();
+    ClearBackground(DARKGRAY);
+
+    // Dibujar los carriles (Igual que en el juego principal)
+    for (int i = 0; i < estado.numLanes; i++) {
+        DrawLine(i * estado.laneWidth, 0, i * estado.laneWidth, estado.gameHeight, LIGHTGRAY);
+    }
+
+    // Dibujamos la línea de meta (Donde debes presionar las notas)
+    DrawLine(0, estado.buttonY, estado.gameWidth, estado.buttonY, WHITE);
+
+    // Dibujar las notas que hemos guardado
+    // Recorremos nuestra lista de notasGuardadas una por una
+    for (int i = 0; i < estado.notasGuardadas.size(); i++) {
+        NotaDatos nota = estado.notasGuardadas[i];
+
+        // LÓGICA DE LA LÍNEA DE TIEMPO
+        // Si el tiempo de la nota es igual al tiempo actual, la nota está en la linea de meta
+        // Si el tiempo de la nota es Mayor al actual, la nota debe estar más arriba en la pantalla
+        // Multiplicamos por 200 para exagerar la distancia visualmente (px por segundo)
+        float diferenciaTiempo = nota.tiempo - estado.tiempoEditor;
+        float posicionY = estado.buttonY - (diferenciaTiempo * 200.0f);
+
+        // Solo la dibujamos si esta dentro de la pantalla
+        if (posicionY > -100 && posicionY < estado.gameHeight + 100) {
+            float posicionX = nota.carril * estado.laneWidth + 10;
+            DrawRectangle(posicionX, posicionY, estado.laneWidth - 20, estado.noteHeight, GREEN);
+        }
+    }
+
+    // Dibujar textos de ayuda en pantalla
+    DrawText("MODO EDITOR", estado.gameWidth + 20, 20, 30, YELLOW);
+
+    // Mostramos el tiempo actual
+    std::string textoTiempo = "Tiempo: " + std::to_string(estado.tiempoEditor);
+    DrawText(textoTiempo.c_str(), estado.gameWidth + 20, 70, 20, WHITE);
+
+    if (estado.reproduciendoEditor) {
+        DrawText("REPRODUCIENDO", estado.gameWidth + 20, 110, 20, GREEN);
+    }
+    else {
+        DrawText("Estado: PAUSADO", estado.gameWidth + 20, 110, 20, RED);
+    }
+
+    DrawText("Controles:", estado.gameWidth + 20, 200, 20, LIGHTGRAY);
+    DrawText("- ESPACIO: Play / Pausa", estado.gameWidth + 20, 230, 20, LIGHTGRAY);
+    DrawText("- CLIC IZQ: Poner Nota", estado.gameWidth + 20, 260, 20, LIGHTGRAY);
+    DrawText("- ESC: Volver al Menu", estado.gameWidth + 20, 290, 20, LIGHTGRAY);
+
+    EndDrawing();
+
+
+}

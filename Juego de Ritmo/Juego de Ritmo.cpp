@@ -13,6 +13,7 @@
 #include "GestorGraficos.h"
 #include "GestorMenu.h"
 #include "GestorAudio.h"
+#include "GestorEditor.h"
 
 using namespace std;
 
@@ -62,6 +63,19 @@ int main() {
 
             case CONFIGURACION:
                 // Aun no tenemos nada en configuracion
+                break;
+
+            case EDITOR_NIVELES:
+                actualizarEditor(estado);
+                dibujarEditor(estado);
+
+                // Salir del editor con la tecla ESCAPE usando un if simple
+                if (IsKeyPressed(KEY_BACKSPACE)) {
+                    estado.reproduciendoEditor = false;
+                    StopMusicStream(estado.musicaNivel1); // Detenemos la música
+                    estado.pantalla = MENU_PRINCIPAL;
+                    cambiarMusica(estado, CANCION_MENU);
+                }
                 break;
         }
 
